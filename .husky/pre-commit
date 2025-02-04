@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn lint --quiet && echo "Linting passed. Ready to commit!"
+yarn lint
