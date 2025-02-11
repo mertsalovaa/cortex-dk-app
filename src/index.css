@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("./assets/fonts/ppneuemontreal-bold.otf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Roboto Black Italic */
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("./assets/fonts/ppneuemontreal-medium.otf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("./assets/fonts/ppneuemontreal-book.otf") format("truetype");
+}

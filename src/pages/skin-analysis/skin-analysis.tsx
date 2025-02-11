@@ -1,8 +1,10 @@
+import { MainLayout } from "../../components/layout/main-layout";
+
 const SkinAnalysis = () => {
   return (
-    <div>
+    <MainLayout theme="dark">
       <p>Skin Analysis</p>
-    </div>
+    </MainLayout>
   );
 };
 

@@ -1,0 +1,41 @@
+{
+    "header": {
+        "items": {
+            "skin-analysis": {
+                "title": "皮肤分析",
+                "items": [
+                    "DermaLab Aesthetic",
+                    "DermaLab Combo",
+                    "DermaLab Mini",
+                    "DermaLab Single",
+                    "DermaLab 探头",
+                    "DermaScan",
+                    "Colorimeter DSM-4"
+                ]
+            },
+            "cryosurgery": {
+                "title": "冷冻治疗",
+                "items": []
+            },
+            "company": {
+                "title": "公司介绍",
+                "items": []
+            },
+            "distributors": {
+                "title": "分销商",
+                "items": []
+            },
+            "contact-us": {
+                "title": "联系我们",
+                "items": [
+                    "员工",
+                    "展览会和会议"
+                ]
+            }
+        }
+    },
+    "contact/the-cortex-team": {
+        "employees": "员工",
+        "fairs&conferences": "展览会和会议"
+    }
+}

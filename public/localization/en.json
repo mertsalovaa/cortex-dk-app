@@ -1,0 +1,41 @@
+{
+    "header": {
+        "items": {
+            "skin-analysis": {
+                "title": "Skin Analysis",
+                "items": [
+                    "DermaLab Aesthetic",
+                    "DermaLab Combo",
+                    "DermaLab Mini",
+                    "DermaLab Single",
+                    "DermaLab Probes",
+                    "DermaScan",
+                    "Colorimeter DSM-4"
+                ]
+            },
+            "cryosurgery": {
+                "title": "Cryosurgery",
+                "items": []
+            },
+            "company": {
+                "title": "Company",
+                "items": []
+            },
+            "distributors": {
+                "title": "Distributors",
+                "items": []
+            },
+            "contact-us": {
+                "title": "Contact us",
+                "items": [
+                    "Employees",
+                    "Fairs and conferences"
+                ]
+            }
+        }
+    },
+    "contact/the-cortex-team": {
+        "employees": "Employees",
+        "fairs&conferences": "Fairs and conferences"
+    }
+}

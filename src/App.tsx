@@ -1,19 +1,20 @@
-import { Route, Routes } from "react-router-dom";
-
-import { ContactUs } from "./pages/contact-us/contact-us";
+import { Route, useLocation, Routes } from "react-router-dom";
+import ContactUs from "./pages/contact-us/contact-us";
 import SkinAnalysis from "./pages/skin-analysis/skin-analysis";
-import { Header } from "./components/header";
+import { langPathOptional } from "./components/elements/langs";
 
 function App() {
+  let location = useLocation();
+
   return (
-    <>
-      <Header theme="light" />
-      <Routes>
-        <Route path="/skin-analysis" element={<SkinAnalysis />} />
-        <Route path="/" element={<SkinAnalysis />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-      </Routes>
-    </>
+    <Routes location={location}>
+      <Route path={`${langPathOptional}/`} element={<SkinAnalysis />} />
+      <Route
+        path={`${langPathOptional}/skin-analysis`}
+        element={<SkinAnalysis />}
+      />
+      <Route path={`${langPathOptional}/contact-us`} element={<ContactUs />} />
+    </Routes>
   );
 }
 
