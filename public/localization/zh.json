@@ -34,8 +34,9 @@
             }
         }
     },
-    "contact/the-cortex-team": {
-        "employees": "员工",
-        "fairs&conferences": "展览会和会议"
+    "contact-us-page": {
+        "meet-title": "与我们现场见面",
+        "meet-text": "让我们在你附近的展会上见面，欢迎提前与我们预约。",
+        "meet-btn": "查看我们的位置"
     }
 }

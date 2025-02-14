@@ -1,0 +1,36 @@
+.input-label {
+  position: relative;
+  padding-top: 16px;
+}
+
+.input-label input, .input-label textarea {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-appearance: none;
+}
+.input-label input::placeholder, .input-label textarea::placeholder {
+  color: transparent;
+}
+.input-label .input-label input:required:invalid + label:before,
+.input-label .input-label textarea:required:invalid + label:before  {
+  content: "*";
+}
+
+.input-label input:not(:placeholder-shown) + label,
+.input-label textarea:not(:placeholder-shown) + label {
+  font-size: 12px;
+  margin-top: -5px;
+}
+
+.input-label label {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 20px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  color: theme("colors.light-dark");
+}

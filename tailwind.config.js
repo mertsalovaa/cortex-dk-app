@@ -9,6 +9,10 @@ export default {
         "light": "#ededed",
         "dark": "#111",
         "active": "#eaa053",
+        "violet": "#705cd0",
+        "light-dark": "#919191",
+        "light-orange": "#eaa053",
+        "orange": "#e58148",
       }
     },
   },

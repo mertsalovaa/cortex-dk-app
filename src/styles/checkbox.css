@@ -1,0 +1,17 @@
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + span {
+  width: 23px;
+  height: 23px;
+  background: #fff;
+  box-shadow: inset 0px 0px 0px 2px #fff;
+  border-radius: 5px;
+  border: 1px solid theme(colors.dark);
+  cursor: pointer;
+  padding: 2px;
+}
+input[type="checkbox"]:checked + span {
+  background: theme(colors.violet);
+}
+

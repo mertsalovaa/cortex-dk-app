@@ -1,0 +1,23 @@
+button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 35px;
+  width: 22px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='16' viewBox='0 0 22 16' fill='none'%3E%3Cpath d='M14.219 16L13.4866 15.2471L20.0168 8.53308H0V7.46692H20.0168L13.4866 0.752941L14.219 0L22 8L14.219 16Z' fill='%23fff'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s, right 0.3s;
+}
+
+button:hover:after {
+  opacity: 1;
+  right: 20px;
+}
+
+button:disabled:hover:after {
+  opacity: 0;
+}

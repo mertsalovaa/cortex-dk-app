@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const linkStyles: string = "py-4 px-5 text-2xl hover:opacity-75";
 const activeItem: string = "text-active";
 const itemStyles: string =
-  "font-[PPNeueMontreal] py-4 px-4 text-lg hover:opacity-70 cursor-pointer";
+  "py-4 px-4 text-lg opacity-75 hover:opacity-60 cursor-pointer";
 
 const HeaderLink = ({
   currentPath,
