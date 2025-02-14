@@ -6,7 +6,6 @@ import LanguageDetector from "i18next-browser-languagedetector";
 function getLang() {
   let lng = window.location.pathname.slice(1, 3);
   if (lng.length === 0) {
-    console.log(lng);
     lng = "en";
   }
   return lng;

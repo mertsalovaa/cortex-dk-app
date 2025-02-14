@@ -15,15 +15,24 @@
             },
             "cryosurgery": {
                 "title": "Cryosurgery",
-                "items": []
+                "items": [
+                    "Accessories",
+                    "FAQ and videos"
+                ]
             },
             "company": {
                 "title": "Company",
-                "items": []
+                "items": [
+                    "Downloads",
+                    "Literature",
+                    "Newsletter",
+                    "News",
+                    "Recommendations"
+                ]
             },
             "distributors": {
                 "title": "Distributors",
-                "items": []
+                "items": ["New distributor?"]
             },
             "contact-us": {
                 "title": "Contact us",
@@ -38,5 +47,13 @@
         "meet-title": "Meet us live",
         "meet-text": "Let's meet at a fair near you, and feel free to make an appointment with us in advance.",
         "meet-btn": "Meet us live"
+    },
+    "footer": {
+        "contact-text": [
+            "Phone",
+            "Email",
+            "Corp.reg.no"
+        ],
+        "main-text": "All you need when you need to know about skin"
     }
 }

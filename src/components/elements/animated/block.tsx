@@ -11,7 +11,6 @@ const AnimatedDivFade: React.FC<AnimatedDivFadeProps> = ({ children }) => {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
 
   useEffect(() => {
-    console.log(inView);
     if (inView) {
       controls.start({ opacity: 1, y: 0 });
     }

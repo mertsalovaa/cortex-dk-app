@@ -15,15 +15,15 @@
             },
             "cryosurgery": {
                 "title": "冷冻治疗",
-                "items": []
+                "items": ["配件", "常见问题"]
             },
             "company": {
                 "title": "公司介绍",
-                "items": []
+                "items": ["下载", "文学", "News", "建议"]
             },
             "distributors": {
                 "title": "分销商",
-                "items": []
+                "items": ["新经销商?"]
             },
             "contact-us": {
                 "title": "联系我们",
@@ -38,5 +38,13 @@
         "meet-title": "与我们现场见面",
         "meet-text": "让我们在你附近的展会上见面，欢迎提前与我们预约。",
         "meet-btn": "查看我们的位置"
+    },
+    "footer": {
+        "contact-text": [
+            "电话",
+            "电子邮件",
+            "公司注册号"
+        ],
+        "main-text": "你需要的一切、当你需要了解皮肤的时候"
     }
 }

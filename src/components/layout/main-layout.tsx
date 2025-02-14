@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import Header from "./header";
 import AnimatedDivFade from "../elements/animated/block";
+import Footer from "./footer";
 
 interface LayoutPropsBase {
   pageName?: string | undefined;
@@ -18,6 +19,7 @@ export const MainLayout = (props: LayoutProps) => {
         <Header theme={props.theme} />
       </AnimatedDivFade>
       {props.children}
+      <Footer />
     </div>
   );
 };
