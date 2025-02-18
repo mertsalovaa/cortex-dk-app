@@ -1,6 +1,4 @@
 import { useTranslation } from "react-i18next";
-import DefaultTitle from "../elements/title";
-import ContactUsBodyBlock from "./blocks";
 import { Link, useLocation } from "react-router-dom";
 import { useLinkWithTranslation } from "../../utils/extentions";
 import FooterItem from "../elements/footer-item";

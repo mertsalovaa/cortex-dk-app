@@ -34,16 +34,17 @@ const Header = ({ theme, isFixed }: { theme: string; isFixed: boolean }) => {
 
   const subItems = useMemo<Array<string>>(() => {
     const keyItem =
-      location.pathname === "/en" || location.pathname === "/en/"
+      location.pathname === "/en" ||
+      location.pathname === "/en/" ||
+      location.pathname === "/"
         ? "skin-analysis"
         : location.pathname.split("/").pop();
-    console.log(location);
-    console.log(keyItem);
+
     const result = t(`header.items.${keyItem}.items`, {
       returnObjects: true,
     });
     return Array.isArray(result) ? result : [];
-  }, [t, link]);
+  }, [t, location]);
 
   return (
     <header
