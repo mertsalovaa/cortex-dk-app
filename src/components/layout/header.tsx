@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { useMemo } from "react";
 import { useLinkWithTranslation } from "../../utils/extentions";
+
 import Langs from "../elements/langs";
 import HeaderLink, { HeaderLinkItem } from "../elements/header-link";
 
@@ -11,35 +12,20 @@ import logoTextLight from "../../assets/images/logo-text-light.svg";
 import logoImgDark from "../../assets/images/logo-img-dark.svg";
 import logoImgLight from "../../assets/images/logo-img-light.svg";
 
-const Header = ({ theme }: { theme: string }) => {
+const Header = ({ theme, isFixed }: { theme: string; isFixed: boolean }) => {
   const { t } = useTranslation();
   const link = useLinkWithTranslation();
   const location = useLocation();
 
-  const [isFixed, setIsFixed] = useState(false);
   const [isPopped, setIsPopped] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
-      }
-    };
-
     if (isFixed) {
       setIsPopped(true);
       setTimeout(() => {
         setIsPopped(false);
       }, 500);
     }
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, [isFixed]);
 
   const headerItems: [string, any][] = Object.entries(
@@ -47,12 +33,15 @@ const Header = ({ theme }: { theme: string }) => {
   );
 
   const subItems = useMemo<Array<string>>(() => {
-    const result = t(
-      `header.items.${location.pathname.split("/").pop()}.items`,
-      {
-        returnObjects: true,
-      },
-    );
+    const keyItem =
+      location.pathname === "/en" || location.pathname === "/en/"
+        ? "skin-analysis"
+        : location.pathname.split("/").pop();
+    console.log(location);
+    console.log(keyItem);
+    const result = t(`header.items.${keyItem}.items`, {
+      returnObjects: true,
+    });
     return Array.isArray(result) ? result : [];
   }, [t, link]);
 
@@ -60,10 +49,10 @@ const Header = ({ theme }: { theme: string }) => {
     <header
       className={`${
         theme === "light" ? "bg-light text-dark" : "bg-dark text-light"
-      } font-[PPNeueMontreal] flex flex-col items-center w-full h-[80px] lg:h-[140px] z-[1003]
-      transition-all duration-500 ease-in-out
-      ${isFixed ? "fixed -top-1 pt-7" : "sticky top-0"}
-      ${isPopped ? "scale-[1.02]" : "scale-100"} h-[80px] lg:h-[140px] pt-6 px-4 w-full`}
+      } font-[PPNeueMontreal] flex flex-col items-center w-full z-[1003]
+       transition-all duration-700 ease-in-out
+      ${isFixed ? "fixed top-0" : "sticky top-0"}
+      ${isPopped ? "scale-[1.01] overflow-hidden" : "scale-100"} lg:h-[140px] pt-6 px-4 w-full`}
     >
       <div className="flex items-center w-full h-1/2">
         <Link className="w-1/6" to={link("/")}>

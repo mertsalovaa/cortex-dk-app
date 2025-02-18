@@ -9,9 +9,9 @@ export const langs: { [key: string]: string } = {
   zh: "zh",
 };
 
-function getLocation(location: string, lang: string) {
+function getLocation(location: string) {
   if (location) {
-    return `${location.replace(`/${lang}`, "")}`;
+    return `${location.replace(`/${location.slice(1, 3)}`, "")}`;
   }
   return ``;
 }
@@ -24,7 +24,7 @@ const Langs = ({ theme }: { theme: string }) => {
         <Link
           className={`px-1 text-2xl ${theme === "light" ? "text-dark" : "text-light"} hover:opacity-80 ${i18n.language === langKey && "opacity-50"}`}
           key={langKey}
-          to={`/${langKey}${getLocation(window.location.pathname, i18n.language)}`}
+          to={`/${langKey}${getLocation(window.location.pathname)}`}
           onClick={(e) => changeLanguage(langKey)}
         >
           {langKey.toUpperCase()}

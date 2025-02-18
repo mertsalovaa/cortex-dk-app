@@ -1,31 +1,56 @@
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import AnimatedLine from "../../components/elements/animated/line";
 import AnimatedDivFade from "../../components/elements/animated/block";
-import ContactLink from "../../components/elements/contact-link";
-import DefaultTitle from "../../components/elements/title";
+import ContactLink, {
+  ContactInfoCard,
+} from "../../components/elements/contact-link";
+import DefaultTitle, { DefaultText } from "../../components/elements/title";
 import { MainLayout } from "../../components/layout/main-layout";
 import TextInput, { TextAreaInput } from "../../components/elements/inputs";
-import { useEffect, useState } from "react";
 import SubjectItem, {
   subjects,
 } from "../../components/elements/contact-subject-item";
 import ContactUsBodyBlock from "../../components/layout/blocks";
 import Checkbox from "../../components/elements/checkbox";
-import { Link } from "react-router-dom";
 import NextButton from "../../components/elements/buttons";
 
 import planetImage from "../../assets/images/planet_contact-us.png";
-import { useTranslation } from "react-i18next";
 
-type SocialLink = { name: string; link: string };
+import { AxisValue, WAY_COUNT } from "../../utils/constants";
 
-const socialArray: SocialLink[] = [
-  { name: "Facebook", link: "https://www.facebook.com/CortexTechnology/" },
-  { name: "Instagram", link: "https://www.instagram.com/cortex_technology/" },
+export type SocialInfo = { name: string; value: string };
+
+const socialArray: SocialInfo[] = [
+  { name: "Facebook", value: "https://www.facebook.com/CortexTechnology/" },
+  { name: "Instagram", value: "https://www.instagram.com/cortex_technology/" },
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/company/cortex-technology-aps?originalSubdomain=dk",
+    value:
+      "https://www.linkedin.com/company/cortex-technology-aps?originalSubdomain=dk",
   },
-  { name: "YouTube", link: "https://www.youtube.com/@CortexTechnology" },
+  { name: "YouTube", value: "https://www.youtube.com/@CortexTechnology" },
+];
+
+const contactsArray: { title: string; items: Array<SocialInfo> }[] = [
+  {
+    title: "中国香港、澳门、台湾 Namfield Medical Technology Ltd.",
+    items: [
+      { name: "电话", value: "+852 2714 6878" },
+      { name: "电子邮件", value: "info@namfield.com.hk" },
+      { name: "网站", value: "namfield.com" },
+    ],
+  },
+  {
+    title: "中国内地 Guangzhou A&F Scientific Technology Co., LTD.",
+    items: [
+      { name: "电话", value: "020-83789751" },
+      { name: "电子邮件", value: "info@afscientific.com" },
+      { name: "网站", value: "www.afscientific.com" },
+    ],
+  },
 ];
 
 const ContactUs = () => {
@@ -40,7 +65,8 @@ const ContactUs = () => {
   const [isTermsState, setIsState] = useState<boolean>(false);
   const [isDisabledBtn, setIsDisabledBtn] = useState<boolean>(true);
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+  const location = useLocation();
 
   const selectedAnswer = (chosen: string, state: boolean) => {
     if (chosen.includes("terms and conditions")) {
@@ -79,34 +105,50 @@ const ContactUs = () => {
 
   return (
     <MainLayout theme="dark">
-      <ContactUsBodyBlock class="bg-dark min-h-screen ">
-        <div className="w-2/5 space-y-5">
-          <DefaultTitle color="light">Get more info and prices!</DefaultTitle>
-          <DefaultTitle color="light">
-            Book a demonstration of products!
-          </DefaultTitle>
-          <p className="text-lg opacity-70">
-            Feel free to request more information about our products or require
-            prices. Please use our contact form. We look forward to hearing from
-            you!
-          </p>
-        </div>
+      {location.pathname.includes("en") && (
+        <ContactUsBodyBlock class={`bg-dark min-h-screen`}>
+          <div className="w-2/5 space-y-5">
+            <DefaultTitle color="light">Get more info and prices!</DefaultTitle>
+            <DefaultTitle color="light">
+              Book a demonstration of products!
+            </DefaultTitle>
+            <DefaultText class="">
+              Feel free to request more information about our products or
+              require prices. Please use our contact form. We look forward to
+              hearing from you!
+            </DefaultText>
+          </div>
 
-        <div className="w-1/3 space-y-5">
-          <DefaultTitle color="light">Find us at SoMe:</DefaultTitle>
-          <div className="flex flex-col">
-            {socialArray.map((item) => (
-              <ContactLink key={item.name} name={item.name} link={item.link} />
+          <div className="w-1/3 space-y-5">
+            <DefaultTitle color="light">Find us at SoMe:</DefaultTitle>
+            <div className="flex flex-col">
+              {socialArray.map((item) => (
+                <ContactLink
+                  key={item.name}
+                  name={item.name}
+                  link={item.value}
+                />
+              ))}
+            </div>
+          </div>
+        </ContactUsBodyBlock>
+      )}
+      {location.pathname.includes("zh") && (
+        <div className={`bg-dark min-h-screen flex justify-center py-16`}>
+          <div className="w-1/4 space-y-5">
+            <DefaultTitle color="light">请联系</DefaultTitle>
+            {contactsArray.map((item, index) => (
+              <ContactInfoCard item={item} key={index} />
             ))}
           </div>
         </div>
-      </ContactUsBodyBlock>
+      )}
 
-      {i18n.language === "en" && (
+      {location.pathname.includes("en") && (
         <div className="bg-light">
           <AnimatedLine />
 
-          <AnimatedDivFade>
+          <AnimatedDivFade axis={AxisValue.Y} way={WAY_COUNT.down}>
             <p className="text-4xl text-dark px-4">
               Please use the contact form
             </p>
@@ -183,7 +225,7 @@ const ContactUs = () => {
               className={`w-4/5 text-light-dark ${line.length === 0 && "pt-10"}`}
             >
               {line.length !== 0 && (
-                <AnimatedDivFade>
+                <AnimatedDivFade axis={AxisValue.Y} way={WAY_COUNT.up}>
                   <p className="text-lg text-light-dark *:px-0.5 relative top-12 left-4 pt-2 pb-1">
                     You have chosen:{" "}
                     <span className="font-semibold">{line}</span> as your
@@ -234,7 +276,7 @@ const ContactUs = () => {
         className="p-5 relative -top-7 flex bg-light text-dark w-full h-svh bg-contain bg-no-repeat bg-left"
       >
         <ContactUsBodyBlock class="bg-transparent *:flex-col items-center *:justify-between *:items-start *:w-2/5 *:h-1/3">
-          <AnimatedDivFade>
+          <AnimatedDivFade axis={AxisValue.Y} way={WAY_COUNT.down}>
             <DefaultTitle color="dark">
               {t("contact-us-page.meet-title")}
             </DefaultTitle>

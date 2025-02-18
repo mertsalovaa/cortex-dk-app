@@ -13,6 +13,7 @@ export default {
         "light-dark": "#919191",
         "light-orange": "#eaa053",
         "orange": "#e58148",
+        "image-grey": "#e4e4e4",
       }
     },
   },

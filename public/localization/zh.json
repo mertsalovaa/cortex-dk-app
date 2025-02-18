@@ -15,15 +15,25 @@
             },
             "cryosurgery": {
                 "title": "冷冻治疗",
-                "items": ["配件", "常见问题"]
+                "items": [
+                    "配件",
+                    "常见问题"
+                ]
             },
             "company": {
                 "title": "公司介绍",
-                "items": ["下载", "文学", "News", "建议"]
+                "items": [
+                    "下载",
+                    "文学",
+                    "News",
+                    "建议"
+                ]
             },
             "distributors": {
                 "title": "分销商",
-                "items": ["新经销商?"]
+                "items": [
+                    "新经销商?"
+                ]
             },
             "contact-us": {
                 "title": "联系我们",
@@ -32,6 +42,70 @@
                     "展览会和会议"
                 ]
             }
+        }
+    },
+    "skin-analysis-page": {
+        "header": [
+            {
+                "title": "您需要了解的 皮肤知识",
+                "desc": [
+                    "我们为一丝不苟的皮肤专家提供精密的研究工具。我们的仪器可为研究和美容诊所提供科学、客观的皮肤测量结果。",
+                    "通过提供专业的皮肤分析，提高您的成功率。使用正确的工具，让每个人都知道您对数据的重视。"
+                ]
+            },
+            {
+                "title": "了解皮肤",
+                "desc": [
+                    "了解细节",
+                    "了解数据",
+                    "了解皮肤的健康状况"
+                ]
+            }
+        ],
+        "title-1": "皮肤分析产品",
+        "products": [
+            {
+                "name": "DermaLab Combo 4",
+                "desc": "强大的仪器，用于真正的皮肤分析--同时具有多达9个不同的参数。"
+            },
+            {
+                "name": "DermaLab Mini",
+                "desc": "用于科学皮肤分析的小型仪器 l"
+            },
+            {
+                "name": "DermaLab Aesthetic",
+                "desc": "Skin analysis tool for aesthetic clinics. Attract more clients!"
+            },
+            {
+                "name": "Colorimeter DSM-4",
+                "desc": "便携式色度计，对颜色、色素、红斑和光泽进行精确的四合一测量。"
+            },
+            {
+                "name": "DermaScan",
+                "desc": "先进的皮肤超声，有几十年的科学使用经验。"
+            },
+            {
+                "name": "DermaLab Single",
+                "desc": "具有以下参数之一的皮肤分析仪器： TEWL、弹性、水合度或超声波。"
+            }
+        ],
+        "author": {
+            "name": "Jakob Wested",
+            "job": "生产总监",
+            "text": "我们关注皮肤分析和治疗中的重要因素--提供坚固耐用的精密工具和丰富的数据，让皮肤专业人员可以信赖和执行。"
+        },
+        "info-block": {
+            "text1": "在您附近的貿易展會上與我們見面",
+            "button1": "與我們現場見面",
+            "text2": "獲取我們的新聞 - 訂閱我們的新聞通訊",
+            "button2": "註冊獲取新聞!"
+        },
+        "planet-block": {
+            "title": "全球 经销商",
+            "subtitle": "从全球到各个地方",
+            "text1": "我们在世界各地都有分销商，以确保我们的仪器得到最佳分配。",
+            "text2": "如果你的国家没有当地的分销商，欢迎你直接与我们联系。",
+            "button": "寻找您当地的经销商"
         }
     },
     "contact-us-page": {

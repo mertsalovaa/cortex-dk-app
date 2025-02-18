@@ -1,4 +1,4 @@
-button::after {
+.next-btn::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -10,14 +10,41 @@ button::after {
   background-repeat: no-repeat;
   transform: translateY(-50%);
   opacity: 0;
-  transition: opacity 0.3s, right 0.3s;
+  transition:
+    opacity 0.3s,
+    right 0.3s;
 }
 
-button:hover:after {
+.next-btn:hover:after {
   opacity: 1;
   right: 20px;
 }
 
-button:disabled:hover:after {
+.next-btn:disabled:hover:after {
   opacity: 0;
+}
+
+.arrow-btn:hover span.circle {
+  left: 100%;
+  margin-left: -45px;
+  border-color: theme("colors.orange");
+  background-color: theme("colors.orange");
+}
+.arrow-btn:hover span.circle svg {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.arrow-btn span.title {
+  position: relative;
+  right: -10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: theme("colors.orange");
+}
+
+.arrow-btn:hover span.title {
+  left: 10px;
+  color: theme("colors.orange");
 }

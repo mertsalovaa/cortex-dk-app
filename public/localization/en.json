@@ -32,7 +32,9 @@
             },
             "distributors": {
                 "title": "Distributors",
-                "items": ["New distributor?"]
+                "items": [
+                    "New distributor?"
+                ]
             },
             "contact-us": {
                 "title": "Contact us",
@@ -41,6 +43,67 @@
                     "Fairs and conferences"
                 ]
             }
+        }
+    },
+    "skin-analysis-page": {
+        "header": [
+            {
+                "title": "Pro tools for skin professionals",
+                "desc": [
+                    "We produce study precision tools for meticulous skin professionals."
+                ]
+            },
+            {
+                "title": "Scientific measurements",
+                "desc": [
+                    "Our instruments deliver scientific and objective measurements of skin for both research and aesthetic clinics. Use the right tools, and let everyone know, that you value data."
+                ]
+            }
+        ],
+        "title-1": "Skin Analysis Products",
+        "products": [
+            {
+                "name": "DermaLab Combo 4",
+                "desc": "Powerful instrument for true skin analysis in research. Features up to 9 different parameters at the same time."
+            },
+            {
+                "name": "DermaLab Mini",
+                "desc": "Compact instrument l for scientific skin analysis"
+            },
+            {
+                "name": "DermaLab Aesthetic",
+                "desc": "Skin analysis tool for aesthetic clinics. Attract more clients!"
+            },
+            {
+                "name": "Colorimeter DSM-4",
+                "desc": "Portable colorimeter with accurate 4-in-1 measurements of color, pigmentation, erythema and gloss."
+            },
+            {
+                "name": "DermaScan",
+                "desc": "Advanced skin ultrasound with decades of scientific use."
+            },
+            {
+                "name": "DermaLab Single",
+                "desc": "Skin analysis instrument with one of the following parameters: TEWL, elasticity, hydration or ultrasound."
+            }
+        ],
+        "author": {
+            "name": "Jakob Wested",
+            "job": "Director of production",
+            "text": "We care about the essential factors in skin analysis and treatment - providing sturdy precision tools and rich data, in which skin professionals can rely and perform."
+        },
+        "info-block": {
+            "text1": "Meet us at a trade show near you",
+            "button1": "Meet us live",
+            "text2": "Get our news - Subscribe to our newsletter",
+            "button2": "Sign up for news!"
+        },
+        "planet-block": {
+            "title": "Global distributors",
+            "subtitle": "Global to local",
+            "text1": "We have distributors all around the world to ensure optimal distribution of our instruments.",
+            "text2": "If your country does not have a local distributor, you are welcome to contact us directly.",
+            "button": "Find your local distributor"
         }
     },
     "contact-us-page": {

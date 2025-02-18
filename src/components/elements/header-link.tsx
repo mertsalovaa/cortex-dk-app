@@ -18,7 +18,7 @@ const HeaderLink = ({
 }) => {
   return (
     <Link
-      className={`${linkStyles} ${currentPath.includes(path) && activeItem}`}
+      className={`${linkStyles} ${(currentPath.includes(path) || ((currentPath === "/en" || currentPath === "/en/") && path === "skin-analysis")) && activeItem}`}
       to={link(
         path.includes("contact-us") || path.includes("skin-analysis")
           ? path

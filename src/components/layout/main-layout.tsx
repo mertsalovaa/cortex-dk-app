@@ -1,24 +1,38 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
+
 import Header from "./header";
 import AnimatedDivFade from "../elements/animated/block";
 import Footer from "./footer";
 
+import { AxisValue, WAY_COUNT } from "../../utils/constants";
+
 interface LayoutPropsBase {
-  pageName?: string | undefined;
+  pageName?: string;
   theme: "dark" | "light";
 }
+
 interface LayoutProps extends PropsWithChildren<LayoutPropsBase> {}
 
-export const MainLayout = (props: LayoutProps) => {
+export const MainLayout = ({ theme, children }: LayoutProps) => {
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsFixed(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div
-      className={`w-full h-dvh font-[PPNeueMontreal] ${props.theme === "light" ? "bg-light text-dark" : "bg-dark text-light"}`}
-      {...props}
+      className={`${isFixed && "pt-[130px]"} w-full h-dvh font-[PPNeueMontreal] ${theme === "light" ? "bg-light text-dark" : "bg-dark text-light"}`}
     >
-      <AnimatedDivFade>
-        <Header theme={props.theme} />
+      <AnimatedDivFade axis={AxisValue.Y} way={WAY_COUNT.down}>
+        <Header isFixed={isFixed} theme={theme} />
       </AnimatedDivFade>
-      {props.children}
+      {children}
       <Footer />
     </div>
   );

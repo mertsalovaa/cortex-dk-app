@@ -20,7 +20,7 @@ i18n
       loadPath: `/localization/{{lng}}.json`,
     },
     debug: false,
-    lng: "en",
+    lng: getLang(),
     fallbackLng: getLang(),
     supportedLngs: ["en", "zh"],
     interpolation: {
